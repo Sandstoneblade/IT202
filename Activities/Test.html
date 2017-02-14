@@ -1,0 +1,48 @@
+<html>
+	<head>
+	    <title>Retrieve data from database </title>
+	    <meta name="viewport" content="width=device-width">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+
+            var target = "https://data.cityofchicago.org/resource/7as2-ds3y.json?";
+            var query = "$query SELECT COUNT(*), zip ORDER BY zip GROUP BY zip"
+            var results = $.getScript(target+query)
+            var cvas = document.getElementById("resultcount");
+            cvas.textContent = results;
+            query = "$query SELECT "
+        
+            // Load the Visualization API and the piechart package.
+          google.load('visualization', '1.0', {'packages':['corechart']});
+
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('count', 'Count');
+            data.addColumn('number', 'Zip');
+            data.addRows(results);
+            var options = {'title':'Graphical result',
+                     'width':400,
+                     'height':300};
+
+      
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            }
+        </script>
+	</head>
+	<body>
+   <p id="resultcount">Results: </p>
+    <p id="resultopen">Open: </p>
+     <div id="chart_div" style="width:400; height:300"></div>
+
+    <p id="heatmap"></p>
+    
+	</body>
+</html>
+	
