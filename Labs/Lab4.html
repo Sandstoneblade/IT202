@@ -1,0 +1,113 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+          canvas {background-color: #001E62;z-index:27;}
+        </style>
+    </head>
+        
+    <body>
+        
+        <canvas width = "500" height = "300" id = "myCanvas"></canvas>
+        <p></p>
+        <canvas width = "500" height = "300" id = "myCanvas2" background.color = "red"></canvas>
+        <script type="text/javascript">
+            var circleX = 250;
+            var circleY = 100;
+            var direct = 1;
+            var rad = 50;
+            document.onkeydown = checkKey;
+            var cvas = document.getElementById("myCanvas2");
+            var ctx = cvas.getContext("2d");
+            ctx.fillStyle = "red";
+            ctx.fillRect(0, 0, cvas.width, cvas.height);
+            ctx.stroke();
+            
+            function drawcircle()
+            {
+                var can = document.getElementById ("myCanvas2");
+                var ctx = can.getContext("2d");
+                var wid = can.width;
+                var hei = can.height;
+                ctx.clearRect(0, 0, wid, hei);
+                if (circleX == 50 || circleX == (wid-50))
+                {
+                    direct *= -1;
+                }
+                circleX += direct;
+                ctx.fillStyle = "#FFFFFF";
+                ctx.beginPath();
+                ctx.arc(circleX, circleY, rad, 0, 2 * Math.PI);
+                ctx.fill();
+                requestAnimationFrame(drawcircle);
+                
+            }
+            function draw()
+            {
+            var can = document.getElementById ("myCanvas");
+            var ctx = can.getContext("2d");
+            ctx.fillStyle = "#D50032";
+            ctx.beginPath();
+            ctx.arc(250, 150, 100, 0, 2 * Math.PI);
+            ctx.fill();
+            var size = 40;
+            var y = can.height/2;
+            var x = can.width/2;
+            ctx.font = '40pt Helvetica';
+            ctx.textAlign = 'center';
+            ctx.fillStyle = 'white';
+            ctx.fillText('CDW', x, y);
+            ctx.fillText('UIC', x, y + 40)
+            ctx.stroke();    
+            }
+            function clear (){
+                var context = document.getElementById('myCanvas');
+                var content = context.getContext("2d");
+                var wid = context.width;
+                var hei = context.height;
+                console.log (wid + ', ' + hei);
+                content.clearRect(0, 0, wid, hei);
+                
+            }
+            function checkKey(e){
+                if (e.key == 'x')
+                {
+                    clear();
+                }
+                else if (e.key == 'u')
+                {
+                    draw();
+                }
+                else if (e.key == 'ArrowDown')
+                {
+                    var can = document.getElementById ("myCanvas2");
+                    var dimY = can.height;
+                    console.log(dimY);
+                    if (circleY < (dimY - rad))
+                    {
+                        console.log(circleY);
+                        circleY++;
+                    }
+
+                }
+                else if (e.key == 'ArrowUp')
+                {
+                    if (circleY > rad)
+                    {
+                        console.log(circleY);
+                        circleY--;
+                    }
+                    
+                }
+            }
+            requestAnimationFrame(drawcircle);
+        </script>
+    </body>
+    
+    
+    
+</html>

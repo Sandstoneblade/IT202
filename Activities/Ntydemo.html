@@ -1,0 +1,232 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/examples/jumbotron/jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="https://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+      .byline {font-size: .8em;}
+      
+      .articleTemplate {display:none;}
+    </style>
+  <script>(function n(){!function(){function e(e,t,n){t=t||{};var i=e.ownerDocument||e,a=i.createEvent?i.createEvent("CustomEvent"):i.createEventObject();a.initCustomEvent&&a.initCustomEvent(t.type,!!t.bubbles,!!t.cancelable,t.detail);for(var r in t)a[r]=t[r];return setTimeout(function(){try{e.dispatchEvent?e.dispatchEvent(a):e.fireEvent("on"+t.type,i.createEventObject())}catch(n){var r=e["listen"+t.type];if(r)for(var l=0;l<r.length;++l)try{r[l].call(e,a)}catch(e){}}n()},0),this}function t(e,t,n){function i(e,t){try{var n=e.ownerDocument;if(n.createEventObject){var i=n.createEventObject();e.fireEvent("on"+t,i)}else i=n.createEvent("HTMLEvents"),i.initEvent(t,!0,!0),e.dispatchEvent(i)}catch(e){}}var a=!0,r=e.className&&e.className.indexOf("fancified")!=-1;if(window.jQuery){var l=window.jQuery(e);try{if(l.selectBoxIt)l.selectBoxIt("selectOption",l.val());else if(l.data("chosen")||l.chosen)l.trigger("chosen:updated").trigger("liszt:updated");else if(l.data("chooserElement"))l.trigger("change");else if(l.fancySelect)l.get("fancySelect").select("value",l.val());else if(l.selectBox)l.selectBox("value",l.val());else if(l.selectric)l.selectric("refresh");else if(l.coreUISelect){var s=l.data("coreUISelect");s.isSelectShow=!0,s.changeDropdownData(),s.isSelectShow=!1}else if(l.data("myJSPulldownObject")){var o=l.data("myJSPulldownObject");o.setToValue(l.val())}else if(l.fancyfields)l.setVal(l.val());else if(l.data("select2"));else if(l.data("selectize"))a=!1,l.data("selectize").setValue(l.val());else if(l.hasClass("fancified"))l.trigger("update");else if(l.selectmenu){var c=l.val();try{l.selectmenu("value",l[0].options[0].value)}catch(e){}l.selectmenu("value",c)}l.trigger("change")}catch(e){}}a&&(r&&i(e,"update"),i(e,"change"),i(e,"blur")),n()}function n(t,n,i,a){var r=t.value;e(t,{type:"keydown",keyCode:n,which:n,charCode:n,bubbles:!0},function(){e(t,{type:"keypress",keyCode:n,which:n,charCode:n,bubbles:!0},function(){setTimeout(function(){var l=t.value;r==l&&(t.value=i),e(t,{type:"input",keyCode:n,which:n,charCode:n,bubbles:!0},function(){e(t,{type:"keyup",keyCode:n,which:n,charCode:n,bubbles:!0},function(){a()})})},1)})})}function i(e,t,a,r){if(!t||""==t)return void r();var l=t.charCodeAt(0);a+=t.charAt(0),n(e,l,a,function(){i(e,t.substring(1),a,r)})}function a(t,n,i){if(window.abineTriggerChangeInProgress)return void setTimeout(function(){a(t,n,i)},100);window.abineTriggerChangeInProgress=!0;try{if(window.jQuery){var r=window.jQuery(t);(r.data("rawMaskFn")||r.mask||r.CardPhoneFormatting)&&r.focus().val(n).trigger("input").trigger("paste")}}catch(e){}e(t,{type:"change"},function(){e(t,{type:"blur"},function(){window.abineTriggerChangeInProgress=!1,i()})})}function r(t,n,r){e(t,{type:"focus"},function(){e(t,{type:"click"},function(){i(t,n,"",function(){a(t,n,function(){e(document,{type:"abineFilled"},function(){r()})})})})})}function l(n,i,a,r){var l=(i||"").toLowerCase(),s=function(){e(document,{type:"abineFilled"},function(){r()})},o=!1,c=!1,d=n.getElementsByTagName("option");if(d&&d.length>0){for(var u=-1,m=0;m<d.length;m++){var f=(d[m].text||"").toLowerCase(),h=(d[m].getAttribute("value")||"").toLowerCase();if(h==l||f==l){d[m].selected||(o=!0),c=!0,d[m].selected=!0;break}u==-1&&f.indexOf(l)!=-1&&(u=m)}c||u==-1||a||d[u].selected||(o=!0,d[u].selected=!0,c=!0)}n.setAttribute("abineFillResponse",c),o?t(n,i,s):s()}function s(){var e=document.getElementsByClassName("abineFillTarget");if(e.length>0)return e[0];for(var t=0;t<frames.length;t++)try{var e=frames[t].document.getElementsByClassName("abineFillTarget");if(e.length>0)return e[0]}catch(e){}return null}function o(){var n=document.createElement("div");n.id="abineFillElement","undefined"!=typeof paypal&&n.setAttribute("data-paypal","1"),"undefined"!=typeof OffAmazonPayments&&n.setAttribute("data-amazon","1"),"undefined"!=typeof MasterPass&&n.setAttribute("data-masterpass","1"),document.documentElement.appendChild(n),n.addEventListener("fill",function(){var t=s();if(t){var i=n.getAttribute("value");r(t,i,function(){})}else e(document,{type:"abineFilled"},function(){})},!1),n.addEventListener("fillSelect",function(){var t=s();if(t){var i=n.getAttribute("value"),a=!!n.getAttribute("skipPartial");l(t,i,a,function(){})}else e(document,{type:"abineFilled"},function(){})}),n.addEventListener("triggerChange",function(){var e=s(),i=n.getAttribute("value");e&&(e.nodeName.match(/select/i)?t(e,i,function(){}):a(e,i,function(){}))})}o()}()})()</script></head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" abineguid="E8E41E8A92D14F4C848F85077C7DAC23">
+            <div class="form-group">
+              <input placeholder="Email" class="form-control" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off" type="text">
+            </div>
+            <div class="form-group">
+              <input placeholder="Password" class="form-control" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off" type="password">
+            </div>
+            
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Click »</a></p>
+        <input type ="text" id = "textquery" placeholder = "Enter search term"><button id="trigger">click me</button>
+            <a id ="btnsearch" class = "btn"
+      </div>
+    </div>
+
+    <div class="container">
+      <img id="loading" src="http://blog.teamtreehouse.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif" alt="loading">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6 articleTemplate">
+          <h2>Heading</h2>
+          <p class="byline"></p>
+          <p class="leadParagraph">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="" target="_blank" role="button">View on NYT</a></p>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>© 2016 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"><\/script>')</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+    <script>
+    
+      $(function() {
+        
+        $("#trigger").on("click", function(){
+            console.log("click event");
+            var query = ("#textquery").value();
+            
+            console.log(query);
+            
+            // find template
+        var template = $(".col-md-6:eq(0)");
+        
+        // Built by LucyBot. www.lucybot.com
+        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        url += '?' + $.param({
+          'api-key': "b8a7dd9289cf4745875a8bba6c0e9931",
+          'q': query
+        });
+        $.ajax({
+          url: url,
+          method: 'GET',
+        }).done(function(result) {
+          //console.log(result);
+          
+          $("#loading").hide();
+          
+          $.each(result.response.docs, function(idx, val) {
+
+            // clone the template element
+            var clone = template.clone();
+            
+            clone.addClass("article");
+            
+            // update values in the clone
+            clone.find("h2").text(val.headline.main);
+            clone.find("p.byline").text(getByline(val));
+            
+            // had to replace this when I inserted a new "first" p in the template
+            //clone.find("p:eq(0)").text(val.lead_paragraph);
+            clone.find("p.leadParagraph").text(val.lead_paragraph);
+            
+            
+            clone.find("p a").attr("href", val.web_url);
+            
+            if (getImageUrl(val) !== "") {
+              clone.append("<img>");
+              
+              clone.find("img").attr("src", getImageUrl(val));
+            } 
+
+            // insert into DOM
+            template.parent().append(clone);
+            clone.show();
+            
+          });
+          
+
+          
+          
+        }).fail(function(err) {
+          throw err;
+        });        
+        
+        
+
+
+
+
+
+
+
+
+
+      });
+        })
+        
+        
+    
+    
+      /*
+          function getImageUrl
+          
+          returns the first image item in the multimedia array
+      */
+      function getImageUrl (record) {
+        
+        var result = "";
+        
+        // loop through the multimedia objects
+        $.each(record.multimedia, function(index,value){
+          //console.log(value.type);
+          if (value.type == "image") {
+            //console.log(value.url);
+            result = "http://www.nytimes.com/" + value.url;
+            return false;   // to exit loop
+          } 
+        })
+        return result;
+      }
+
+      function getByline(record) {
+        
+        var bylineDate, result = "";
+        
+        // we need to ensure the byline element exists before 
+        //    trying to access a property;  
+        if (record.byline) {
+          // using the OR operator to return the data, if it exists
+          //    or the empty string
+          result = record.byline.original || "";
+        }
+
+        bylineDate = new Date(record.pub_date);
+        result += " " + bylineDate.toDateString();
+        return result;
+      }
+      
+
+      
+    </script>
+  
+  
+
+<script style="display: none;" aria-hidden="true" type="application/x-lastpass" id="hiddenlpsubmitdiv"></script><script>try{(function() { for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }})()}catch(e){}</script></body><div id="abineFillElement"></div><div class="abineContentPanel" style="background-color:transparent !important;margin:0 !important;padding:0 !important;display:none !important;opacity:1 !important;filter:alpha(opacity:100) !important;z-index:2147483647 !important;position:absolute !important;overflow:hidden !important;border-width:0px !important;visibility:visible !important;background:transparent"><iframe class="abineContentFrame qpfsjakdrkibsnqiijkw" name="abineContentFrame" allowtransparency="true" scrolling="no" src="blur://panel.html?abine30183223doNotRemove" id="abine30183223doNotRemove" style="position:relative !important;display:block !important;background:transparent !important;border-width:0px !important;left:0px !important;top:0px !important;visibility:visible !important;opacity:1 !important;filter:alpha(opacity:100) !important;margin:0 !important;padding:0 !important;height:0px !important;width:450px" width="450px" height="0px" frameborder="0"></iframe></div></html>
