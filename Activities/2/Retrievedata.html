@@ -6,7 +6,7 @@
         <!--Load the AJAX API-->
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
-
+           
             var target = "https://data.cityofchicago.org/resource/7as2-ds3y.json?";
             var query = "$query SELECT COUNT(*), zip ORDER BY zip GROUP BY zip"
             var results = $.getScript(target+query)
