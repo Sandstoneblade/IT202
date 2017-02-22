@@ -1,0 +1,87 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+          canvas {background-color: #001E62;z-index:27;}
+        </style>
+    </head>
+        
+    <body>
+
+        <canvas width = "500" height = "300" id = "myCanvas2" background.color = "red"></canvas>
+        <script type="text/javascript">
+            var circleX = 50;
+            var circleY = 100;
+            var pmoveSpeed = 5;
+            var foemoveSpeed = 3;
+            var foeWidth = 10;
+            var foeHeight = 10;
+            var direct = 1;
+            var rad = 50;
+
+            var foe = {type:"Foe", speed:foemoveSpeed, xPos:500,yPos:50};
+            var foes = [foe];
+            
+            document.onkeydown = checkKey;
+            var cvas = document.getElementById("myCanvas2");
+            var ctx = cvas.getContext("2d");
+            ctx.fillStyle = "red";
+            ctx.fillRect(0, 0, cvas.width, cvas.height);
+            ctx.stroke();
+            
+            function drawcircle()
+            {
+                var can = document.getElementById ("myCanvas2");
+                var ctx = can.getContext("2d");
+                var wid = can.width;
+                var hei = can.height;
+                if (foe.xPos + foeWidth < 0)
+                {
+                    foe.xPos = 500 + (Math.random() * 200)
+                    foe.yPos = Math.random() * (hei-foeHeight);
+                }
+                ctx.clearRect(0, 0, wid, hei);
+                ctx.fillStyle = "#FFFFFF";
+                ctx.beginPath();
+                ctx.arc(circleX, circleY, rad, 0, 2 * Math.PI);
+                ctx.fillRect(foe.xPos, foe.yPos, foeWidth, foeHeight);
+                foe.xPos -= foemoveSpeed;
+                ctx.fill();
+                requestAnimationFrame(drawcircle);
+                
+            }
+            
+            function checkKey(e){
+                if (e.key == 'ArrowDown')
+                {
+                    var can = document.getElementById ("myCanvas2");
+                    var dimY = can.height;
+                    console.log(dimY);
+                    if (circleY < (dimY - rad))
+                    {
+                        console.log(circleY);
+                        circleY += pmoveSpeed;
+                    }
+
+                }
+                else if (e.key == 'ArrowUp')
+                {
+                    if (circleY > rad)
+                    {
+                        console.log(circleY);
+                        circleY-= pmoveSpeed;
+                    }
+                    
+                }
+            }
+            requestAnimationFrame(drawcircle);
+        </script>
+    </body>
+    
+    
+    
+</html>
