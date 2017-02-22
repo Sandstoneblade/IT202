@@ -21,15 +21,18 @@
             var circleY = 100;
             var pmoveSpeed = 5;
             var foemoveSpeed = 3;
-            var foeWidth = 10;
-            var foeHeight = 10;
+            var foeWidth = 20;
+            var foeHeight = 3;
+            var allyWidth = 10;
+            var allyHeight = 10;
             var direct = 1;
             var rad = 50;
             var can = document.getElementById ("myCanvas2");
             var hei = can.height;
             var initposy = Math.random()*hei - foeHeight;
-            var foe = {type:"Foe", speed:foemoveSpeed, xPos:500,yPos:initposy};
-            var foes = [foe];
+            var foe = {ene:1, speed:foemoveSpeed, xPos:500,yPos:initposy};
+            var ally = {ene:0, speed:foemoveSpeed, xPos:500, yPos: (Math.random()*hei - foeHeight)};
+            var foes = [foe, ally];
             
             document.onkeydown = checkKey;
             
@@ -58,8 +61,16 @@
                 ctx.arc(circleX, circleY, rad, 0, 2 * Math.PI);
                 for (val of foes)
                 {
-                    ctx.fillRect(val.xPos, val.yPos, foeWidth, foeHeight);   
-                    foe.xPos -= foemoveSpeed;
+                    if (val.ene == 1)
+                    {   ctx.fillStyle = "RED";
+                        ctx.fillRect(val.xPos, val.yPos, foeWidth, foeHeight);
+                    }
+                    else
+                    {
+                        ctx.fillStyle = "WHITE";
+                        ctx.fillRect(val.xPos, val.yPos, allyWidth, allyHeight);
+                    }
+                    val.xPos -= foemoveSpeed;
                 }
                 ctx.fill();
                 requestAnimationFrame(drawcircle);
