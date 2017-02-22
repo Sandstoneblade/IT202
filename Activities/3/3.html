@@ -11,7 +11,10 @@
     </head>
         
     <body>
-
+        <p id ="lives">Lives: </p>
+        <p id ="livecount">3</p>
+        <p id ="score">Score: </p>
+        <p id ="scorecount">0</p>
         <canvas width = "500" height = "300" id = "myCanvas2" background.color = "red"></canvas>
         <script type="text/javascript">
             var circleX = 50;
@@ -22,34 +25,42 @@
             var foeHeight = 10;
             var direct = 1;
             var rad = 50;
-
-            var foe = {type:"Foe", speed:foemoveSpeed, xPos:500,yPos:50};
+            var can = document.getElementById ("myCanvas2");
+            var hei = can.height;
+            var initposy = Math.random()*hei - foeHeight;
+            var foe = {type:"Foe", speed:foemoveSpeed, xPos:500,yPos:initposy};
             var foes = [foe];
             
             document.onkeydown = checkKey;
-            var cvas = document.getElementById("myCanvas2");
-            var ctx = cvas.getContext("2d");
-            ctx.fillStyle = "red";
-            ctx.fillRect(0, 0, cvas.width, cvas.height);
-            ctx.stroke();
             
+            
+
+            // For more foes, can use foes.push(object) to append to array
             function drawcircle()
             {
                 var can = document.getElementById ("myCanvas2");
                 var ctx = can.getContext("2d");
                 var wid = can.width;
                 var hei = can.height;
-                if (foe.xPos + foeWidth < 0)
+                var val;
+                for (val of foes)
                 {
-                    foe.xPos = 500 + (Math.random() * 200)
-                    foe.yPos = Math.random() * (hei-foeHeight);
+                    if (val.xPos + foeWidth < 0)
+                    {
+                        val.xPos = 500 + (Math.random() * 200)
+                        val.yPos = Math.random() * (hei-foeHeight);
+                    }
+                    
                 }
                 ctx.clearRect(0, 0, wid, hei);
                 ctx.fillStyle = "#FFFFFF";
                 ctx.beginPath();
                 ctx.arc(circleX, circleY, rad, 0, 2 * Math.PI);
-                ctx.fillRect(foe.xPos, foe.yPos, foeWidth, foeHeight);
-                foe.xPos -= foemoveSpeed;
+                for (val of foes)
+                {
+                    ctx.fillRect(val.xPos, val.yPos, foeWidth, foeHeight);   
+                    foe.xPos -= foemoveSpeed;
+                }
                 ctx.fill();
                 requestAnimationFrame(drawcircle);
                 
