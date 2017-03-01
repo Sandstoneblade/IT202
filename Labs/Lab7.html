@@ -13,13 +13,18 @@
           db.version(1).stores({
               friends: 'name,shoeSize'
           });
-
+          db.version(2).stores({
+              tests: 'data,absurdity'
+          });
+          db.tests.put({data: "no", absurdity: -1});
           //
           // Put some data into it
           //
           db.friends.put({name: "Nicolas", shoeSize: 8});
           db.friends.put({name: "Deletebait", shoeSize: -1});
+          
           db.friends.delete("Deletebait");
+          
           db.friends.put({name: "Test", shoeSize: -11}).then (function(){
               //
               // Then when data is stored, read from it
