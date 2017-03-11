@@ -109,12 +109,6 @@ img.article-image {
   height: auto;
 }
 
-img.gliphy-image
-{
-  width: 50%;
-  height: 50%;
-}
-
 .portfolio-max-width {
   max-width: 900px;
   margin: auto;
